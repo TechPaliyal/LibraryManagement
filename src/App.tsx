@@ -1,15 +1,27 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 
 import './App.css'
 import LoginForm from './Componants/LoginForm/LoginForm'
+=======
+
+
+import LandingPage from './Pages/LandingPage'
+>>>>>>> main
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
+<<<<<<< HEAD
     <div>
       <LoginForm/>
     </div>
+=======
+    <>
+     <LandingPage/>
+    </>
+>>>>>>> main
   )
 }
 
