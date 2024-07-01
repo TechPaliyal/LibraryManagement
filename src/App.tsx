@@ -11,10 +11,10 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-    <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
       <Route path='LibraryManagement' element={<LandingPage/>}/>
-      <Route path='LibraryManagement/Login' element={<LandingPage/>}/>
-      <Route path='LibraryManagement/SignUp' element={<LandingPage/>}/>
+      <Route path='LibraryManagement/management/login' element={<LandingPage/>}/>
+      <Route path='LibraryManagement/user/login' element={<LandingPage/>}/>
      
      </Routes>
      </BrowserRouter>
