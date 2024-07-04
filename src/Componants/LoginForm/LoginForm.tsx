@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { useState,useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useGoogleLogin } from '@react-oauth/google';
+
+
 
 
 
@@ -23,6 +26,10 @@ function LoginForm() {
         "email" : "" ,
         "password" : ""
     });
+      
+    const login = useGoogleLogin({
+        onSuccess: () => navigate("/login/Librarylist")
+      });
       
     useEffect(() => {
         const rememberedEmail = localStorage.getItem('email');
@@ -94,6 +101,10 @@ function LoginForm() {
     
   return (
 
+    
+    
+
+
     <div className='page'>
         <div className='wallpaper'>
         <h1 id='line1'>Quote of the day</h1>
@@ -129,18 +140,23 @@ function LoginForm() {
             </div>
         
                 <Button type='submit' className='login-btn'>Login</Button>
-            
+               
             <p className='Or-text'> Or Login with</p>
             <div className='Google-login'>
-                <Button variant="outline" className='google-btn'><img className = 'icon-image' src="images/Google.jpg" alt="" />Google</Button>
-            </div>
+            <Button onClick={() => login()}
+                    variant="outline"
+                    className='google-btn'
+                    >Google </Button>
+           </div>
             <div className='register'>
                 want to register? <Link to='/login/register' id='blue'>Register</Link>
             </div>
-         </form>
-
+         
+            </form>
     </div>
+    
     </div>
+    
   )
 }
 
