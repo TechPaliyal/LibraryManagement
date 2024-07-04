@@ -55,7 +55,7 @@ body {
 .input-cover{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -89,10 +89,10 @@ body {
     margin: -15px 0 15px 25px;
     gap: 70px;
 }
-.login-btn{
+.register-btn{
     height: 30px;
     width: 60%;
-    margin-top: 20px;
+    margin-top: 1px;
    margin-left: 75px;
     border-radius: 10px;
     font-size: 20px;
@@ -103,7 +103,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .Or-text::before,
 .Or-text::after{
@@ -124,8 +124,8 @@ body {
     width: 10px;
     margin-right: 5px;
 }
-.register{
-    margin-left: 95px;
+.bottom{
+    margin-left: 68px;
     margin-top: 10px;
 }
 #blue{
