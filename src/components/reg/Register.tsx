@@ -23,12 +23,15 @@ function Register() {
     });
     const handleSubmit = (e:FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
+        if(input.email == '' || input.password == '' || input.confirmpassword ==''){
+            alert("please fill the credentials")
+        }else{
         if(input.password !== input.confirmpassword){
             alert("password and confirm password does not match")
           }else{
             localStorage.setItem("user" , JSON.stringify(input));
             navigate("/login")
-          }
+          }}
     }
       
     const handleRegister = () => {
@@ -112,9 +115,7 @@ function Register() {
                 <Button type='submit' className='register-btn'>Register</Button>
             
             <p className='Or-text'> Or Register with</p>
-            <div className='Google-login'>
-                <Button variant="outline" className='google-btn'><img className = 'icon-image' src="./images/Google.jpg" alt="" />Google</Button>
-            </div>
+           
             <div className='bottom'>
                 Already have an account? <Link to='/login' id='blue'>Login</Link>
             </div>
