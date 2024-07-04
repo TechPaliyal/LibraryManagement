@@ -114,7 +114,7 @@ function Register() {
                 </div>
                 <Button type='submit' className='register-btn'>Register</Button>
             
-            <p className='Or-text'> Or Register with</p>
+            <p className='Or-text'> O r</p>
            
             <div className='bottom'>
                 Already have an account? <Link to='/login' id='blue'>Login</Link>
