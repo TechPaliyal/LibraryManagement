@@ -8,7 +8,7 @@ const LandingPage = () => {
         <p className="text-[36px] font-medium">Your central place for all library needs</p>
         <div className="flex gap-[20px] mt-[50px]">
       <Link to={'management/login'}><Button variant="outline">Create A Library</Button></Link>  
-       <Link to={'user/login'}><Button >Join A Library</Button></Link> 
+       <Link to={'/Quote'}><Button >Join A Library</Button></Link> 
         </div>
     </div>
   )

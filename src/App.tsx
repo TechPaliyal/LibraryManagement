@@ -3,6 +3,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LandingPage from './Pages/LandingPage'
 import NotFound from './NotFound'
+import Quote from './mycomponents/Quote'
 
 function App() {
  
@@ -15,6 +16,9 @@ function App() {
       <Route path='LibraryManagement' element={<LandingPage/>}/>
       <Route path='LibraryManagement/management/login' element={<LandingPage/>}/>
       <Route path='LibraryManagement/user/login' element={<LandingPage/>}/>
+      <Route path='/Quote' element={<Quote/>}/>
+
+      
      
      </Routes>
      </BrowserRouter>
