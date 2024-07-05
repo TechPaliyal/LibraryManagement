@@ -57,7 +57,7 @@ return (
 <Button variant="outline" className='google-btn'><img className = 'icon-image' src="./src/Componants/assets/images/white.webp" alt="" />Google</Button>
 </div>
 <div className='register'>
-want to register? <Link id='blue' to='Registration'>Register </Link>
+want to register? <Link id='blue' to='/register'>Register </Link>
 </div>
 
 </form>

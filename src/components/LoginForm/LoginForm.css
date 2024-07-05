@@ -12,7 +12,7 @@ body {
 .wallpaper{
     flex: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-               url('./src/Componants/assets/images/library.jpg');
+               url('/images/library.jpg');
     background-size: cover;
 }
 .wrapper{

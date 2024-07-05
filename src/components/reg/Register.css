@@ -15,7 +15,7 @@ body {
     gap: 20px;
     flex: 1;
     background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('./src/componants/assets/images/library.jpg');
+                url('./images/library.jpg');
     background-size: cover;
     color: aliceblue;
     text-align: center;
