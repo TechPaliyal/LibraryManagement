@@ -6,8 +6,6 @@ import LandingPage from './Pages/LandingPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
- 
-
   return (
     <BrowserRouter basename="/LibraryManagement">
     <Routes>
@@ -21,4 +19,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

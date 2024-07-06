@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { useNavigate } from 'react-router-dom';
 
-
 const LandingPage = () => {
 
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const LandingPage = () => {
         <Button onClick={ handleJoinLibrary} >Join A Library</Button>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
