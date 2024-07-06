@@ -37,8 +37,8 @@ function Quote() {
     getQuote(api_url);
   }, []);
   return (
-    <div className={twMerge("flex-col bg-zinc-800 text-white w-1/2 h-full")}>
-      <h1 className={twMerge("text-6xl font-medium text-left my-16 ml-28")}>
+    <div className={twMerge("flex-col text-white w-1/2 h-full")}>
+      <h1 className={twMerge(" w-full text-5xl  my-16 ml-14")}>
         Quote of the day
       </h1>
       <h1
