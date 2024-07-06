@@ -3,7 +3,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LandingPage from './Pages/LandingPage'
 import NotFound from './NotFound'
-import Quote from './mycomponents/Quote'
 
 function App() {
  
