@@ -16,7 +16,6 @@ function App() {
       <Route path='LibraryManagement' element={<LandingPage/>}/>
       <Route path='LibraryManagement/management/login' element={<LandingPage/>}/>
       <Route path='LibraryManagement/user/login' element={<LandingPage/>}/>
-      <Route path='/Quote' element={<Quote/>}/>
 
       
      
