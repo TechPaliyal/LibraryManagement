@@ -28,4 +28,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@v1.4.7
+        with:
+          source-dir: ./dist/
+            
