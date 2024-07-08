@@ -28,6 +28,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          preview: true
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1.4.7
         with:
