@@ -1,11 +1,18 @@
 import { FaUser, FaLock } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
 import Quote from "@/mycomponents/Quote";
 import { twMerge } from "tailwind-merge";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
+
+  const goList = () => {
+    navigate("/librarylist");
+  };
   return (
     <div
       className={twMerge("flex flex-col md:flex-row h-screen overflow-hidden")}
@@ -23,6 +30,7 @@ function LoginForm() {
 
       <div className="md:w-1/2 flex items-center justify-center">
         <form
+          onSubmit={goList}
           className={twMerge(
             "border border-gray-300 w-full md:w-3/5 h-7/10 p-6 rounded"
           )}
@@ -48,14 +56,15 @@ function LoginForm() {
           </div>
           <div className={twMerge("flex items-center gap-14 mt-4")}>
             <label>
-              <input type="checkbox" className={twMerge("mr-2")} />
-              Remember Me
+              <Checkbox className="ml-5" /> Remember me
             </label>
             <Link className={twMerge("text-blue-700")} to="/">
               Forgot password?
             </Link>
           </div>
-          <Button className={twMerge("w-full mt-6")}>Login</Button>
+          <Button type="submit" className={twMerge("w-full mt-6")}>
+            Login
+          </Button>
           <p
             className={twMerge(
               'mt-6 text-center  relative flex items-center my-4 before:content-[""] before:flex-1 before:border-b before:border-black before:mx-3 after:content-[""] after:flex-1 after:border-b after:border-black after:mx-3'
