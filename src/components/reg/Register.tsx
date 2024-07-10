@@ -39,7 +39,6 @@ function Register() {
     }
   };
 
-
   return (
     <div
       className={twMerge("flex flex-col md:flex-row h-screen overflow-hidden")}

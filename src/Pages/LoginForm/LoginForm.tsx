@@ -6,12 +6,21 @@ import { Link } from "react-router-dom";
 import Quote from "@/mycomponents/Quote";
 import { twMerge } from "tailwind-merge";
 import { useNavigate } from "react-router-dom";
+import libraryimage from "./images/library.jpg";
+import googleimage from "./images/Google.jpg";
+interface LoginFormProps {
+  up: string;
+}
 
-function LoginForm() {
+const LoginForm: React.FC<LoginFormProps> = (props) => {
   const navigate = useNavigate();
 
   const goList = () => {
-    navigate("/librarylist");
+    if (props.up == "user") {
+      navigate("/librarylist");
+    } else {
+      navigate("/users");
+    }
   };
   return (
     <div
@@ -20,7 +29,7 @@ function LoginForm() {
       <div className={twMerge("md:w-1/2 relative")}>
         <img
           className={twMerge("h-full w-full object-cover")}
-          src="./images/library.jpg"
+          src={libraryimage}
           alt=""
         />
         <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center text-white text-center">
@@ -79,7 +88,7 @@ function LoginForm() {
             >
               <img
                 className={twMerge("h-3 w-3")}
-                src="./images/Google.jpg"
+                src={googleimage}
                 alt="Google"
               />
               Google
@@ -97,6 +106,6 @@ function LoginForm() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginForm;

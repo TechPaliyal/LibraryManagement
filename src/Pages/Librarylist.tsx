@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Nav from "@/mycomponents/Nav";
 
 function Librarylist() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,17 +52,7 @@ function Librarylist() {
 
   return (
     <div>
-      <nav className={twMerge("flex gap-7 text-2x1")}>
-        <li>
-          <Link to={"/home"}>HOME</Link>
-        </li>
-        <li>
-          <Link to={"/contact"}>CONTACT</Link>
-        </li>
-        <li>
-          <Link to={"/about"}>ABOUT</Link>
-        </li>
-      </nav>
+      <Nav/>
       <h1 className="text-[28px] ml-5 mt-3 font-bold">List of Libraries</h1>
       <p className="text-gray-400 ml-5">Search for your suitable library</p>
       <div className="flex items-center justify-center h-full ">
@@ -76,7 +65,7 @@ function Librarylist() {
               className="flex flex-row h-36 w-full border border-b-neutral-500"
             >
               <div className="h-28 w-28 mx-4 my-4 ">
-                <img src="./images/Google.jpg" alt="" />
+                <img src={library.image} alt="" />
               </div>
               <div className="space-y-2">
                 <h1 className="text-[28px] font-bold space-x-3">

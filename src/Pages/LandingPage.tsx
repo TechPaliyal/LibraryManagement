@@ -5,11 +5,11 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleCreateLibrary = () => {
-    navigate("/login");
+    navigate("library/login");
   };
 
   const handleJoinLibrary = () => {
-    navigate("/login");
+    navigate("user/login");
   };
   return (
     <div className="h-[100vh] flex flex-col justify-center items-center">
