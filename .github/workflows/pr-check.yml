@@ -33,4 +33,5 @@ jobs:
         uses: rossjrw/pr-preview-action@v1.4.7
         with:
           source-dir: ./dist/
+          preview-branch: gh-pages
             
