@@ -37,16 +37,16 @@ function Quote() {
     getQuote(api_url);
   }, []);
   return (
-    <div className={twMerge("flex-col bg-zinc-800 text-white w-1/2 h-full")}>
-      <h1 className={twMerge("text-6xl font-medium text-left my-16 ml-28")}>
+    <div className={twMerge("flex-col text-white w-1/2 h-full")}>
+      <h1 className={twMerge(" w-full text-center text-5xl  my-16 ")}>
         Quote of the day
       </h1>
       <h1
-        className={twMerge("w-96 font-medium text-3xl ml-40 ")}
+        className={twMerge("w-96 font-medium text-center text-2xl  ")}
       >{`"${Quote}"`}</h1>
       <p
-        className={twMerge(" font-medium text-2xl ml-96 my-16")}
-      >{`author- "${Author}"`}</p>
+        className={twMerge(" font-medium text-1xl ml-44 w-full my-16")}
+      >{` "${Author}" -author`}</p>
     </div>
   );
 }

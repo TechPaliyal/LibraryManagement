@@ -1,26 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingPage from "./Pages/LandingPage";
-import NotFound from "./NotFound";
+
+import './App.css'
+import LoginForm from './Pages/LoginForm/LoginForm';
+import Register from './Pages/register/Register';
+import LandingPage from './Pages/LandingPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Librarylist from './Pages/Librarylist';
+import Users from './Pages/Users';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="LibraryManagement" element={<LandingPage />} />
-          <Route
-            path="LibraryManagement/management/login"
-            element={<LandingPage />}
-          />
-          <Route
-            path="LibraryManagement/user/login"
-            element={<LandingPage />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+    <BrowserRouter basename="/LibraryManagement">
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/library/login" element={<LoginForm up='library'/>} />
+      <Route path="/user/login" element={<LoginForm up='user'/>} />
+      <Route path='/register' element={<Register/>}/>
+      <Route path='/librarylist' element={<Librarylist/>}/>
+      <Route path='/users' element={<Users/>}/>
+
+
+
+    </Routes>
+  </BrowserRouter>
+  )
 }
 
 export default App;

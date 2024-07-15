@@ -1,10 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { increment, decrement } from "../store/features/counter/counterSlice"; 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store"; 
 
+
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleCreateLibrary = () => {
+    navigate("library/login");
+  };
+
+  const handleJoinLibrary = () => {
+    navigate("user/login");
+  };
+
+
+
   const count = useSelector((state: RootState) => state.counter.count);
   const dispatch = useDispatch();
 
@@ -37,12 +50,10 @@ const LandingPage = () => {
       
      
       <div className="flex gap-[20px] mt-[50px]">
-        <Link to={"management/login"}>
-          <Button variant="outline">Create A Library</Button>
-        </Link>
-        <Link to={"management/login"}>
-          <Button>Join A Library</Button>
-        </Link>
+        <Button variant="outline" onClick={handleCreateLibrary}>
+          Create A Library
+        </Button>
+        <Button onClick={handleJoinLibrary}>Join A Library</Button>
       </div>
     </div>
   );
