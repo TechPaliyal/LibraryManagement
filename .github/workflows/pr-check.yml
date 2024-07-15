@@ -7,6 +7,8 @@ on:
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
+  id-token: write
+  pull-requests: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -28,4 +30,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@v1.4.7
+        with:
+          source-dir: ./dist/
+          preview-branch: gh-pages
+            
