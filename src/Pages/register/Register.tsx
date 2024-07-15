@@ -5,6 +5,7 @@ import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
+import libraryimage from "./images/library.jpg";
 import Quote from "@/mycomponents/Quote";
 
 interface InputState {
@@ -46,7 +47,7 @@ function Register() {
       <div className={twMerge("md:w-1/2 relative")}>
         <img
           className={twMerge("h-full w-full object-cover")}
-          src="./images/library.jpg"
+          src={libraryimage}
           alt=""
         />
         <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center text-white text-center">

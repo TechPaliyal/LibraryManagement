@@ -1,7 +1,7 @@
 
 import './App.css'
 import LoginForm from './Pages/LoginForm/LoginForm';
-import Register from './components/reg/Register';
+import Register from './Pages/register/Register';
 import LandingPage from './Pages/LandingPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Librarylist from './Pages/Librarylist';

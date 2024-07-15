@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div>
-        <nav className="flex gap-7 text-2x1">
+    <div className="w-full">
+      <nav className="flex gap-7 text-[22px] font-medium pt-5 text-gray-500">
         <li>
           <Link to={"/home"}>HOME</Link>
         </li>
@@ -15,7 +15,7 @@ function Nav() {
         </li>
       </nav>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

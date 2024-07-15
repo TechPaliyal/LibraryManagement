@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { increment, decrement } from "../store/features/counter/counterSlice"; 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store"; 
