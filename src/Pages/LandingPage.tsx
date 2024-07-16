@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { increment, decrement } from "../store/features/counter/counterSlice"; 
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store"; 
+
 
 
 const LandingPage = () => {
@@ -18,8 +16,6 @@ const LandingPage = () => {
 
 
 
-  const count = useSelector((state: RootState) => state.counter.count);
-  const dispatch = useDispatch();
 
   return (
     <div className="h-[100vh] flex flex-col justify-center items-center">
@@ -29,24 +25,7 @@ const LandingPage = () => {
       </p>
 
 
-      <div className="flex mt-[20px] gap-[10px]">
-     <Button
-        onClick={() => dispatch(decrement())}
-        variant="outline"
-        
-      >
-        -
-      </Button> 
-      <div className="border p-[7px] rounded-[7px]">{count}</div>
-      <Button
-        onClick={() => dispatch(increment())}
-        variant="outline"
-       
-      >
-        +
-      </Button>
-
-      </div>
+     
       
      
       <div className="flex gap-[20px] mt-[50px]">
