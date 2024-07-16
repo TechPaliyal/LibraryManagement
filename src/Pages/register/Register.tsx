@@ -35,7 +35,7 @@ function Register() {
       dispatch(signup({ email: input.email, password: input.password }))
         .unwrap()
         .then(() => {
-          navigate("/");
+          navigate("/users");
           console.log(input)
         })
         .catch((error) => {
