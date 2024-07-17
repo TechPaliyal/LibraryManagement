@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Client, Account } from 'appwrite';
 
 const client = new Client();
-client.setEndpoint('https://cloud.appwrite.io/v1').setProject('669617ce003ae83f76ce');
+client.setEndpoint('https://cloud.appwrite.io/v1').setProject('66972f2f001555776950');
 
 const account = new Account(client);
 export interface AuthState {
