@@ -42,7 +42,7 @@ function Quote() {
         Quote of the day
       </h1>
       <h1
-        className={twMerge("w-96 font-medium text-center text-2xl  ")}
+        className={twMerge("flex font-medium text-center text-2xl  ")}
       >{`"${Quote}"`}</h1>
       <p
         className={twMerge(" font-medium text-1xl ml-44 w-full my-16")}

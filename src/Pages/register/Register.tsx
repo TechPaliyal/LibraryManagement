@@ -129,7 +129,7 @@ function Register() {
 
           <div className={twMerge("text-center mt-4")}>
             Already have an account?{" "}
-            <Link to="/login" className={twMerge("text-blue-700")}>
+            <Link to="/library/login" className={twMerge("text-blue-700")}>
               Login
             </Link>
           </div>

@@ -92,7 +92,11 @@ function Librarylist() {
         <Modal user="first" library={selectLibrary.name}  onProceed={openSecondModal} onClose={closeSecondModal}/>
       )}
       {isSecondModalOpen && selectLibrary && (
-       <Modal user="second" library={selectLibrary.name}  onProceed={openSecondModal} onClose = { closeSecondModal}/>
+       <Modal user="second" 
+              library={selectLibrary.name}
+              onProceed={openSecondModal}
+              onClose = { closeSecondModal}
+              />
       )}
     </div>
   );
