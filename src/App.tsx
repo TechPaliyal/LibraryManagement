@@ -6,6 +6,7 @@ import LandingPage from './Pages/LandingPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Librarylist from './Pages/Librarylist';
 import Users from './Pages/Users';
+import Forgot from './Pages/Forgot';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/librarylist' element={<Librarylist/>}/>
       <Route path='/users' element={<Users/>}/>
+      <Route path='/forgot' element={<Forgot/>}/>
+
 
 
 

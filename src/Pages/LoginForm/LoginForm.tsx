@@ -67,7 +67,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
             <label>
               <Checkbox className="ml-5" /> Remember me
             </label>
-            <Link className={twMerge("text-blue-700")} to="/">
+            <Link className={twMerge("text-blue-700")} to="/Forgot">
               Forgot password?
             </Link>
           </div>
