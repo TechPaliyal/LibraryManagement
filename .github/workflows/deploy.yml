@@ -1,79 +1,50 @@
-1 name: Deploy static content to Pages
-2 
-3 on:
-4   # Runs on pushes targeting the default branch
-5   push:
-6     branches: ['main']
-7 
-8   # Allows you to run this workflow manually from the Actions tab
-9   workflow_dispatch:
-10 
-11 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
-12 permissions:
-13   contents: read
-14   pages: write
-15   id-token: write
-16 
-17 # Allow one concurrent deployment
-18 concurrency:
-19   group: 'pages'
-20   cancel-in-progress: true
-21 
-22 jobs:
-23   # Single deploy job since we're just deploying
-24   deploy:
-25     environment:
-26       name: github-pages-${{ github.event.pull_request.number }}
-27       url: ${{ steps.deployment.outputs.page_url }}
-28     runs-on: ubuntu-latest
-29     steps:
-30       - name: Checkout
-31         uses: actions/checkout@v4
-32       - name: Set up Node
-33         uses: actions/setup-node@v4
-34         with:
-35           node-version: 20
-36           cache: 'npm'
-37       - name: Install dependencies
-38         run: npm ci
-39       - name: Build
-40         run: npm run build
-41       - name: Setup Pages
-42         uses: actions/configure-pages@v4
-43       - name: Upload artifact
-44         uses: actions/upload-pages-artifact@v3
-45         with:
-46           # Upload dist folder
-47           path: './dist'
-48       - name: Deploy to GitHub Pages
-49         id: deployment
-50         uses: actions/deploy-pages@v4
-51 
-52   pr-deploy:
-53     if: github.event_name == 'pull_request'
-54     environment:
-55       name: github-pages-pr-${{ github.event.pull_request.number }}
-56       url: ${{ steps.deployment.outputs.page_url }}
-57     runs-on: ubuntu-latest
-58     steps:
-59       - name: Checkout
-60         uses: actions/checkout@v4
-61       - name: Set up Node
-62         uses: actions/setup-node@v4
-63         with:
-64           node-version: 20
-65           cache: 'npm'
-66       - name: Install dependencies
-67         run: npm ci
-68       - name: Build
-69         run: npm run build
-70       - name: Setup Pages
-71         uses: actions/configure-pages@v4
-72       - name: Upload artifact
-73         uses: actions/upload-pages-artifact@v3
-74         with:
-75           path: './dist'
-76       - name: Deploy to GitHub Pages
-77         id: deployment
-78         uses: actions/deploy-pages@v4
-79 
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ['main']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload dist folder
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
