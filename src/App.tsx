@@ -1,3 +1,4 @@
+
 import './App.css'
 import LoginForm from './Pages/LoginForm/LoginForm';
 import Register from './Pages/register/Register';
@@ -8,7 +9,7 @@ import Users from './Pages/Users';
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="/LibraryManagement">
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/library/login" element={<LoginForm up='library'/>} />
@@ -16,7 +17,9 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/librarylist' element={<Librarylist/>}/>
       <Route path='/users' element={<Users/>}/>
-      <Route path='/pr-deploy/:prNumber' element={<LandingPage />} />
+
+
+
     </Routes>
   </BrowserRouter>
   )
