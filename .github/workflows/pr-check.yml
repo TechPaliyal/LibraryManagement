@@ -1,69 +1,71 @@
-name: PR Check
-
-on:
-  pull_request:
-    branches: ['main']
-
-# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: 'pages'
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  pr-deploy:
-    if: github.event_name == 'pull_request'
-    environment:
-      name: github-pages-pr-${{ github.event.pull_request.number }}
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+1 name: PR Check
+2 
+3 on:
+4   pull_request:
+5     branches: ['main']
+6 
+7 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+8 permissions:
+9   contents: read
+10   pages: write
+11   id-token: write
+12 
+13 # Allow one concurrent deployment
+14 concurrency:
+15   group: 'pages'
+16   cancel-in-progress: false
+17 
+18 jobs:
+19   build:
+20     runs-on: ubuntu-latest
+21     steps:
+22       - name: Checkout
+23         uses: actions/checkout@v4
+24       - name: Set up Node
+25         uses: actions/setup-node@v4
+26         with:
+27           node-version: 20
+28           cache: 'npm'
+29       - name: Install dependencies
+30         run: npm ci
+31       - name: Build
+32         run: npm run build
+33       - name: Setup Pages
+34         uses: actions/configure-pages@v4
+35       - name: Upload artifact
+36         uses: actions/upload-pages-artifact@v3
+37         with:
+38           path: './dist'
+39       - name: Deploy to GitHub Pages
+40         id: deployment
+41         uses: actions/deploy-pages@v4
+42 
+43   pr-deploy:
+44     if: github.event_name == 'pull_request'
+45     environment:
+46       name: github-pages-pr-${{ github.event.pull_request.number }}
+47       url: ${{ steps.deployment.outputs.page_url }}
+48     runs-on: ubuntu-latest
+49     steps:
+50       - name: Checkout
+51         uses: actions/checkout@v4
+52       - name: Set up Node
+53         uses: actions/setup-node@v4
+54         with:
+55           node-version: 20
+56           cache: 'npm'
+57       - name: Install dependencies
+58         run: npm ci
+59       - name: Build
+60         run: npm run build
+61       - name: Setup Pages
+62         uses: actions/configure-pages@v4
+63       - name: Delete existing artifact
+64         run: rm -rf ./dist
+65       - name: Upload artifact
+66         uses: actions/upload-pages-artifact@v3
+67         with:
+68           path: './dist'
+69       - name: Deploy to GitHub Pages
+70         id: deployment
+71         uses: actions/deploy-pages@v4
