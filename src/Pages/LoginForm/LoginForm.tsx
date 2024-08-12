@@ -35,7 +35,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
       }
     } catch (error) {
       console.error('Failed to login:', error);
-      
+      navigate('/404');
     }
   };
 

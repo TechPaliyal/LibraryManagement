@@ -1,4 +1,3 @@
-
 import './App.css'
 import LoginForm from './Pages/LoginForm/LoginForm';
 import Register from './Pages/register/Register';
@@ -6,6 +5,7 @@ import LandingPage from './Pages/LandingPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Librarylist from './Pages/Librarylist';
 import Users from './Pages/Users';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -17,9 +17,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/librarylist' element={<Librarylist/>}/>
       <Route path='/users' element={<Users/>}/>
-
-
-
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
   )
